@@ -37,6 +37,43 @@
           }
         }
       }
+    },
+    "crud": {
+      "projectType": "library",
+      "root": "libs/crud",
+      "sourceRoot": "libs/crud/src",
+      "prefix": "ng-platform",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/crud/tsconfig.lib.json",
+            "project": "libs/crud/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/crud/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/crud/src/**/*.ts",
+              "libs/crud/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/crud"],
+          "options": {
+            "jestConfig": "libs/crud/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

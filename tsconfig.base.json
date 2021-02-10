@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@lebonip/ng-formo": ["libs/formo/src/index.ts"]
+      "@lebonip/ng-formo": ["libs/formo/src/index.ts"],
+      "@lebonip/ng-crud": ["libs/crud/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
